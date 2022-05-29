@@ -6,7 +6,7 @@ function Movie({ id, coverImg, title, summary, genres }) {
     <div>
       <img src={coverImg} alt={title} />
       <Link to={`/movie/${id}`}>{title}</Link>
-      <p>{summary}</p>
+      <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
       {genres == null ? null : (
         <ul>
           {genres.map((g) => (
